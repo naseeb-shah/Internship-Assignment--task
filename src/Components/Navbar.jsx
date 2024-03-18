@@ -14,7 +14,7 @@ export const Navbar = () => {
     <Box w={100} ml={20}>    
       <Link  to={"/"}>Home</Link></Box>
       <Box w={100} > 
-      <Link to={"/login"}>Login</Link>
+      {!isAuth && ( <Link to={"/login"}>Login</Link>)}
       </Box> 
       
       <Spacer />

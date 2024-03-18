@@ -58,7 +58,7 @@ export const Login = () => {
     dispatch(login(loginCreds));
   };
   if (isError) {
-    return (<Heading>Somthing went wrong</Heading>);
+    return (<Heading>Something went wrong</Heading>);
   };
   return (
     <Flex
