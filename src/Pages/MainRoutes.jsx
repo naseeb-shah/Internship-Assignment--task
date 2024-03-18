@@ -11,22 +11,40 @@ import Details from "./Details";
 export const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<PrivateRoute>
-        <Homepage />
-      </PrivateRoute>}></Route>
-      
-      <Route path="/deals" element={<PrivateRoute>
-        <Deals />
-      </PrivateRoute>}></Route>
-      <Route path="/details" element={<PrivateRoute>
-        <Details />
-      </PrivateRoute>}></Route>
+      <Route
+        path="/"
+        element={
+          
+            <Homepage />
+          
+        }
+      ></Route>
+
+      <Route
+        path="/deals"
+        element={
+          <PrivateRoute>
+            <Deals />
+          </PrivateRoute>
+        }
+      ></Route>
+      <Route
+        path="/details"
+        element={
+          <PrivateRoute>
+            <Details />
+          </PrivateRoute>
+        }
+      ></Route>
       <Route path="/login" element={<Login />}></Route>
-      <Route path="/recipe/:id" element={
-        <PrivateRoute>
-          <RecipeDetail />
-        </PrivateRoute>
-      }></Route>
+      <Route
+        path="/recipe/:id"
+        element={
+          <PrivateRoute>
+            <RecipeDetail />
+          </PrivateRoute>
+        }
+      ></Route>
       <Route path="*" element={<h1>404 Page Not Found</h1>} />
     </Routes>
   );
