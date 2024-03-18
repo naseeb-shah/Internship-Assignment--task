@@ -1,4 +1,4 @@
-import { RecipeList } from "../Components/RecipeList";
+import { RecipeList } from "../Components/ProductList";
 
 
 export const Homepage = () => {

@@ -12,8 +12,8 @@ export const RecipeDetail = () => {
   }, []);
   const getRecipe = async () => {
     try {
-      let res = await axios.get(`https://blog-database-p9we.vercel.app/recipe/${params?.id}`);
-      setRecipeData(res.data);
+      let res = await axios.get(`https://serverside-five.vercel.app/product/q?_id=${params?.id}`);
+      setRecipeData(res.data.data[0]);
     } catch (err) {
       console.log(err);
     }
@@ -25,6 +25,7 @@ export const RecipeDetail = () => {
         borderWidth="1px"
         borderColor="beige"
         padding="10px 20px"
+        borderRadius={20}
         width="30%"
         boxShadow="rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px"
         margin="auto"
@@ -32,34 +33,30 @@ export const RecipeDetail = () => {
         bg={'rgb(31,42,55)'}
         color={"white"}
       >
-        <Heading as="h1" className="recipe-id">
+        <Text  >
           {params.id}
-        </Heading>
+        </Text>
         <Image
-          src={recipeData?.image}
+          src={"https://picsum.photos/536/354"}
           alt={recipeData?.name}
           style={{ width: '350px' }}
          
         />
-        <Heading as="h3" >
+        <Text  >
           {recipeData?.name}
-        </Heading>
-        <Text >Type: {recipeData?.type}</Text>
-        <Heading as="h2" >
-          Category: {recipeData?.category}
-        </Heading>
-        <Heading as="h3" >
+        </Text>
+        {/* <Text >Type: {recipeData?.type}</Text> */}
+        <Text  >
+          Category: {recipeData?.cat?.toUpperCase()}
+        </Text>
+        <Text  >
           Price: {recipeData?.price}$
-        </Heading>
-        <Box >
-          <Heading as="h3">Ingredients:-</Heading>
-          {recipeData?.ingredients?.map((ele, index) => (
-            <Text key={index}>- {ele} -</Text>
-          ))}
-        </Box>
+        </Text>
+        
       </Box>
     ) : (
       <Spinner
+      textAlign={"center"}
   thickness='4px'
   speed='0.65s'
   emptyColor='gray.200'

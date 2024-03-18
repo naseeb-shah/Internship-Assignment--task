@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Homepage } from "./Homepage";
 import { Login } from "./Login";
-import { RecipeDetail } from "./RecipeDetail";
+import { RecipeDetail } from "./ProductDetails";
 import { PrivateRoute } from "../Components/PrivateRoute";
 
 import Deals from "./Deals";

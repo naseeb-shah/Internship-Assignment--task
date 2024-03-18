@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
 import { authReducer } from "./AuthReducer/reducer";
-import { recipeReducer } from "./RecipeReducer/reducer";
+import { recipeReducer } from "./ProductReducer/reducer";
 import { thunk } from "redux-thunk";
 
 const rootReducer = combineReducers({
